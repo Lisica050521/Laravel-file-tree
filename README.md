@@ -38,11 +38,9 @@ php artisan serve --port=8000
 
 ## 📚 API Endpoints
 
-Базовый URL: `http://localhost:8000`
-
 ### Получение данных
 ```http
-GET /tree
+GET http://127.0.0.1:8000/api/tree
 ```
 ```json
 [
@@ -61,7 +59,7 @@ GET /tree
 ```
 
 ```http
-GET /flat
+GET http://127.0.0.1:8000/api/flat
 ```
 ```json
 [
@@ -72,10 +70,10 @@ GET /flat
 
 ### Управление данными
 ```http
-POST /nodes
+POST http://127.0.0.1:8000/api/nodes
 Body: {"name": "New Node", "parent_id": 1}
 
-DELETE /nodes/{id}
+DELETE http://127.0.0.1:8000/api/nodes/{id}
 ```
 
 ## 🧪 Тестирование
@@ -83,12 +81,12 @@ DELETE /nodes/{id}
 ### Через cURL
 ```bash
 # Получить дерево
-curl http://localhost:8000/tree
+curl http://127.0.0.1:8000/api/tree
 
 # Добавить узел
-curl -X POST http://localhost:8000/nodes \
-  -H "Content-Type: application/json" \
-  -d '{"name":"New Node", "parent_id":1}'
+curl.exe -X POST "http://127.0.0.1:8080/api/nodes" `
+  -H "Content-Type: application/json" `
+  -d '{\"name\":\"New Node\", \"parent_id\":1}'
 ```
 
 ### Через Tinker
